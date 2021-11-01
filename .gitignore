@@ -1,0 +1,33 @@
+#
+#  Please take care what you add to this file. Try to avoid:
+#
+#  - Individual files
+#  - Lots of unnecessary folders when you can ignore the parent
+#  - Overly greedy wild cards
+#
+
+# Root wild cards
+
+**/bin/
+**/obj/
+**/.vscode/
+**/SharedAssemblyInfo.cs
+**custom.config
+**custom.*.config
+**/App_Data/
+**/Logs/
+**/log/
+**.log
+**.suo
+**pingme.txt
+**.aps
+**.eto
+**.user
+**.swf
+**.orig
+**.swp
+**/.vs/
+**/*.pdb/
+Packages/*
+**/Packages/*
+**nuget.exe

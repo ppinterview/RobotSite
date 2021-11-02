@@ -23,6 +23,7 @@ namespace RobotReservationService
         {
             services.AddSingleton<IRobotRepository, RobotRepository>();
             services.AddSingleton<IUserReferenceRepository, UserReferenceRepository>();
+            services.AddSingleton<IReservationRepository, ReservationRepository>();
             services.AddSingleton<IDBProvider, LiteDBProvider>();
 
             SetInitialData(services);
@@ -61,12 +62,23 @@ namespace RobotReservationService
 
             userRepo.Add(new UserReference
             {
-                Username = "Barry Scott"
+                Username = "barryscott"
             });
 
             userRepo.Add(new UserReference
             {
-                Username = "Scott Pilgrim"
+                Username = "scottpilgrim"
+            });
+
+            var reservationRepo = services.BuildServiceProvider().GetService<IReservationRepository>();
+
+            reservationRepo.Add(new Reservation
+            {
+                EndTime = System.DateTime.Now.AddDays(20),
+                StartTime = System.DateTime.Now.AddDays(10),
+                Username = "barryscott",
+                Paid = false,
+                RobotName = "Randy"
             });
         }
 
